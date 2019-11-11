@@ -43,8 +43,13 @@ section {
     background-attachment: fixed;
 }
 
-#home .profile-img {
+#about .profile-img {
     transform: rotate(180);
+    width: 300px;
+    border-radius: 50%;
+}
+
+#contact .csm-seal {
     width: 300px;
     border-radius: 50%;
 }
@@ -54,10 +59,6 @@ footer {
     padding: 50px;
     background-color: #A7C4A0;
     border: 1px solid #8F8389;
-}
-
-#hero h1 {
-    font-size: 3em;
 }
 
 section h1 {
@@ -73,26 +74,36 @@ section h3 {
     font-size: 1.5em;
 }
 
+section ul {
+    display: inline-block;
+}
+
+section li {                   
+    align-items: center;
+    list-style-position: inside;
+}
+
 header a {
     text-decoration: none;
     color: black;
 }
 
 #home {
-    /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
     background-color: #C2EABA;
 }
 
 #about {
-    /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
     background-color: #C5f4E0;
 }
 
 #contact {
-    /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
     background-color: #E6EFE9;
 }
 
 #projects {
     background-color: #C5f4E0;
+}
+
+#projects h1 {
+    font-size: 3em;
 }
