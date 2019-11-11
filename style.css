@@ -12,7 +12,8 @@ header {
     right: 0;
     height: 50px;
     line-height: 50px;
-    background-color: #ff0000;
+    background-color: #A7C4A0;
+    border: 1px solid #8F8389;
 }
 
 header * {
@@ -30,7 +31,7 @@ header li {
 
 section {
     height: 100vh;
-    border: 1px solid black;
+    border: 1px solid #8F8389;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,10 +52,17 @@ section {
 footer {
     text-align: center;
     padding: 50px;
+    background-color: #A7C4A0;
+    border: 1px solid #8F8389;
 }
 
 #hero h1 {
     font-size: 3em;
+}
+
+section h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 6.5em;
 }
 
 section h2 {
@@ -72,15 +80,19 @@ header a {
 
 #home {
     /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
-    background-color: #ff7979;
+    background-color: #C2EABA;
 }
 
 #about {
     /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
-    background-color: #f58aff;
+    background-color: #C5f4E0;
 }
 
 #contact {
     /*background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), #ff0000;*/
-    background-color: #ffb56f;
+    background-color: #E6EFE9;
+}
+
+#projects {
+    background-color: #C5f4E0;
 }
