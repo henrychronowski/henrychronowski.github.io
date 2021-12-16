@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Henry Chronowski's portfolio website, for game programming, mathematics, animation, modelling, and graphics related work." />
+    <title>Home - Henry Chronowski</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+
+<body>
+    <div class="nav-main">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand font-weight-bold" href="index.html">Henry Chronowski</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="project.html">Projects</a>
+                        </li>
+    -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogIndex.html">Blog</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--end:Nav -->
+        </div>
+    </div>
+    <!--end:Navigation -->
+    <main role="main">
+        <section class="pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="project-sidebar">
+                            <!-- Place your project images here -->
+                            <!-- <figure><img src="./assets/img/avatar.png" alt="" class="img-fluid"></figure> -->
+                        </div>
+                    </div>
+                    <!-- end:col -->
+                    <div class="col-md-5 pl-lg-5 pl-md-5">
+                        <!--<div class="sticky-top pt-5">-->
+                        <h1>
+                            Predicting Projectile Physics
+                        </h1>
+                    </div>
+                    <p class="lead mt-4"><strong>The Problem</strong>
+                        <br> I would like to find a generalized way to have an aritificial intelligence controlled agent in a game aim a projectile weapon at a player. This is an extremely common problem in games in the modern day, occuring in everything from 2D platformers to advanced simulation games like Bohemia Interactive's Arma series.
+                                    These of course demand different degrees of accuracy and physics simulation but when you look at the core are described by the same generalized set of equations. We are going to look at this problem in several degrees of complication,
+                                    starting with the simplest case of a projectile with no acceleration applied and a constant velocity.
+                        <br><br> When you boil it down to its simplest form I am trying to anwser two seperate questions: How do you get a projectile to end up at a specific point at a specific time, and how do you predict the location of a moving object in a way that feels good to the player.
+                                     You want the AI to feel like a challenging opponent to the player, but if their math is too good and they have precision accuracy then they can be simply an unfun opponent to play against.
+                        <br>
+                    </p>
+                    <p class="lead mt-4"><strong>The Simplest Approach</strong>
+                        <br> Sometimes you just don't need a fully ballistically simulated projectile, or the calculations would be too intense for a specific game. For a projectile that still moves over time but doesn't require the most intense calculations
+                                        (Think for example the bullets in the game SUPERHOT) you can often get away with assuming a zero acceleration without affecting the player's enjoyment.
+                        <br><br> First things first let's figure out how to get a projectile where we want it in this case. What we have here is fundamentally a math problem, one that high school physics students accross the globe are intimately familiar with.
+                                         In order to simplify this problem we start out knowing a couple things:
+                        <br>• Location of our agent
+                        <br>• Location of our target
+                        <br>• Speed at which our projectile is launched
+                        <br><br> From these we need to figure out one thing: The angle or direction at which to launch our projectile. Since we are assuming a zero acceleration in this case we are dealing with an extremely simple equation:
+                        <br>pos<sub>Pf</sub> &#61; pos<sub>P0</sub> &#43; (Speed&#215;Direction) Time
+                        <br><br> This doesn't seem like a hard equation, right? In reality, it isn't. You've got a known starting position and speed and you are simply trying to find the right direction to send it. However, there are two unknowns here:
+                                         The direction, and all importantly, the time. How do we find the time? This is where the second part of this problem comes into play: predicting the position of the target.
+                        <br><br> Starting to predict the position of the target we have two known factors:
+                        <br>• Location of our target
+                        <br>• Velocity of our target
+                        <br<br> This results in a very familiar equation:
+                            <br>pos<sub>Tf</sub> &#61; pos<sub>T0</sub> &#43; Velocity&#215;Time
+                            <br> We end up with the same equation, with even less unknowns, just time now. We can make several connections between the two equations: The final position of both the target and the projectile is the same, as is the time. With this in mind we can set the equations equal:
+                            <br><br>pos<sub>T0</sub> &#43; Velocity&#215;Time &#61; pos<sub>Tf</sub> &#61; pos<sub>Pf</sub> &#61; pos<sub>P0</sub> &#43; (Speed&#215;Direction) Time
+                            <br>pos<sub>T0</sub> &#43; Velocity&#215;Time &#61; pos<sub>P0</sub> &#43; (Speed&#215;Direction) Time &#61; pos<sub>f</sub>
+
+                            <br><br> However, you may notice that even though we have connected the equations as a system with common variables we still have an issue of having three unknowns; the final position, projectile direction, and the time.
+                                         This is a large issue. In order to deal with this we need to make at least one of them go away. In order to do this, we can use some logic to solve for the time without doing crazy algebra.
+                            <br><br> One of our known constants is the speed of the projectile, and we also happen to know that it will be in the direction of the final position, whatever that ends up being. We also know the current velocity of the target, and if we find the vector from the AI to the target
+                                         we can easily extrapolate the component of that velocity directed away from the AI using some vector math.
+                            <br> In order to get the magnitude of the component of a vector A along a vector B we can use the equation (A • B) / |B|. By using this where A = the velocity of the target and B = the vector of pos<sub>T0</sub> - pos<sub>P0</sub> we get the scalar speed of the target away from the AI.
+                            <br><br> Now that we have a scalar value for both the projectile and the target along the direction between the AI and the target we can build a new equation from the previous one in order to solve for time, eliminating the unknown direction:
+                            <br>pos<sub>T0</sub> &#43; Speed<sub>t</sub>&#215;Time &#61; pos<sub>P0</sub> &#43; Speed<sub>p</sub>&#215; Time &#61; pos<sub>f</sub>
+                            <br><br> We then do basic algebra to solve for time:
+                            <br>pos<sub>T0</sub> &#8722; pos<sub>P0</sub> &#61; Speed<sub>p</sub>&#215; Time &#8722; Speed<sub>t</sub>&#215;Time
+                            <br>pos<sub>T0</sub> &#8722; pos<sub>P0</sub> &#61; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>)&#215;Time
+                            <br>(pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#247; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#61; Time
+                            <br><br> If we then substitute this into our original equation we are left with a single unknown, the vector direction of the projectile's launch:
+                            <br>pos<sub>T0</sub> &#43; Velocity&#215;(pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#247; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#61; pos<sub>P0</sub> &#43; (Speed<sub>p</sub>&#215;Direction) (pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#247; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>)
+                            <br> It's ugly, but it's solvable and that's what's important.
+                            <br><br> Let's step through solving it for the direction:
+                            <br>pos<sub>T0</sub> &#8722; pos<sub>P0</sub> &#43; Velocity&#215;(pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#247; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#61; (Speed<sub>p</sub>&#215;Direction) (pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#247; (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>)
+                            <br>(pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) (Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#247; (pos<sub>T0</sub> &#8722; pos<sub>P0</sub>) &#43; Velocity &#61; Speed<sub>p</sub>&#215;Direction
+                            <br>(Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#43; Velocity &#61; Speed<sub>p</sub>&#215;Direction
+                            <br>((Speed<sub>p</sub> &#8722; Speed<sub>t</sub>) &#43; Velocity ) &#247; Speed<sub>p</sub> &#61; Direction
+
+                            <br><br> Now that we have the direction, all we have to do is launch the projectile in that direction with the predetermined speed and we're set.
+
+                    </p>
+                    <p class="lead mt-4"><strong>Accuracy</strong>
+                        <br> Now obviously this is neither the most accurate formula for aiming a projectile nor the most realistic. However, in games that's not always what you want.
+
+                    </p>
+                    <hr class="mt-5">
+                    <div class="row mt-5">
+                        <div class="col-md-6"><strong>References</strong>
+                            <br>
+                            <p>• Technical information
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <br>
+                            <p>• Soft information
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <br>
+                            <p>Links to repositorys
+                        </div>
+                    </div>
+                    <!-- end:col -->
+                </div>
+            </div>
+            </div>
+            <!-- end:row -->
+            <hr class="mt-5">
+            </div>
+        </section>
+    </main>
+    <footer class="position-relative">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-auto mt-4">
+                    <p class="mb-4">henrychronowski.com</p>
+                </div>
+                <div class="col-lg-3 mt-4 ml-auto">
+                    <p>Henry Chronowski
+                        <br> Burlington, Vermont
+                        <br> 05401
+                    </p>
+                    <a href="mailto:hrchronowski@gmail.com"><span style="text-decoration: underline;">hrchronowski@gmail.com</span></a>
+                </div>
+                <!--<div class="col-lg-3 mt-4 ml-auto">
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="#">instagram</a></li>
+                        <li><a href="#">facebook</a></li>
+                        <li><a href="#" >twitter</a></li>
+                    </ul>
+                </div>
+    			-->
+                <div class="col-lg-auto ml-lg-auto mt-4">
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="mailto: hrchronowski@gmail.com">My email</a></li>
+                        <li><a href="https://www.linkedin.com/in/henry-chronowski/">Linkedin</a></li>
+                        <li><a href="https://github.com/henrychronowski">Github</a></li>
+                        <!-- Please note.You are not allowed to remove credit link.Please respect that.-->
+                        <li><a href="https://sharebootstrap.com">dev by sharebootstrap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </footer>
+    <script src="assets/js/main.min.js"></script>
+</body>
+
+</html>
