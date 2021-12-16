@@ -58,6 +58,10 @@
                         <div class="project-sidebar">
                             <!-- Place your project images here -->
                             <!-- <figure><img src="./assets/img/avatar.png" alt="" class="img-fluid"></figure> -->
+                            <p class="lead mt-4">
+                                <br> Currently solving some rendering issues with the animation side of the tech demo, will put video up when those are solved later tonight
+                                <br>
+                            </p>
                         </div>
                     </div>
                     <!-- end:col -->
@@ -65,8 +69,6 @@
                         <!--<div class="sticky-top pt-5">-->
                         <h1>
                             Predicting Projectile Physics
-                            -Almost done, I'll have it done by 9pm tonight
-                            (I can't get some stuff to render in the tech demo so the video will be added once I figure that out right after presentations)
                         </h1>
                     </div>
                     <p class="lead mt-4"><strong>The Problem</strong>
@@ -125,21 +127,25 @@
                         <br> Now obviously this is neither the most accurate formula for aiming a projectile nor the most realistic. However, in games that's not always what you want.
 
                     </p>
+                    <p class="lead mt-4"><strong>Applicability</strong>
+                        <br> This is overall a very simple approximation of ballistics which can be used in a large variety of genres and games. Since this approach does not take into account gravity it is unlikely to be used when more realistic ballistic calculations are expected, or over long distances. As such you wouldn't want to use it in any kind of simulation game where people are looking for realism.
+                        <br> Where this technique shines is where you just need a moving projectile that is generally aimed, something like a platformer where ballistics may not be as important or something like SUPERHOT where you need the projectiles to not be raycasted but they don't need to be realistic in their ballistics.
+                        <br>
+                    </p>
+                    <p class="lead mt-4"><strong>Platform Constraints</strong>
+                        <br> Due to its simplicity there are not many platform constraints with this technique. You probably would not want to use it in excess where your memory or compute load are very limited, such as on a lower performance mobile device, as any
+                                                    amount of ballistics calculations could be too much. However, on the overwhelming majority of semi-modern console and PC platforms this will not be an issue, and you may even be able to use it with a very large number of AI agents, although
+                                                    other optimization for collision calculations would be necessary.
+                    </p>
                     <hr class="mt-5">
                     <div class="row mt-5">
                         <div class="col-md-6"><strong>References</strong>
                             <br>
-                            <p>• Technical information
+                            <p>• AI for Games, Third Edition, Millington, CRC Press, 2019, Section 3.5
+                                <br>• https://www.gamedeveloper.com/programming/predictive-aim-mathematics-for-ai-targeting
+                                <br>• https://www.forrestthewoods.com/blog/solving_ballistic_trajectories/#.rrij13p29
+
                             </p>
-                        </div>
-                        <div class="col-md-6">
-                            <br>
-                            <p>• Soft information
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <br>
-                            <p>Links to repositorys
                         </div>
                     </div>
                     <!-- end:col -->
