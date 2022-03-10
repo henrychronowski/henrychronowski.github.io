@@ -57,7 +57,7 @@
                     <div class="col-md-7">
                         <div class="project-sidebar">
                             <!-- Place your project images here -->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/E0KSCArlMoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/VDSvJHASrYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <!-- end:col -->
@@ -76,23 +76,40 @@
                         </div>
                     </div>
                     <p class="lead mt-4"><strong>Overview</strong>
-                        <br> This is a project that I am actively working on with <a href="http://www.ethanheil.com/VulkanRenderer.html">Ethan Heil</a> with the dual goals of learning the Vulkan API and improving my skills and knowledge of graphics programming. At this stage the renderer loads a textured 3D model and displays it. From here we are going to continue to add standard graphical features while exploring the Vulkan API.
+                        <br> &emsp;&emsp;&emsp;This is a project that I am actively working on with <a href="http://www.ethanheil.com/VulkanRenderer.html">Ethan Heil</a> with the dual goals of learning the Vulkan API and improving my skills and knowledge of graphics programming.
+                        We now have the renderer loading a 3D .obj file of a Utah teapot and mapping a texture to it, with a controllable camera, Phong lighting, and a wireframe rendering mode. From here we would like to build more advanced lighting, eventually working up to
+                        PBR with global illumination, as well as add the capability for multiple objects and a skybox. Below I go over the parts that I had primary responsibility for and challenges I faced; Please visit Ethan Heil's site to see his work on the project.
                     </p>
-                    <p class="lead mt-4"><strong>Personal Contribution</strong>
-                        <br>    I personally have focused primarily on the 3D aspects of the renderer so far, having integrated the texture and model loading as well as set up the depth pass and buffer. Having attempted to write a file parser for 3D object files I elected to make
+                    <p class="lead mt-4"><strong>Model Loading</strong>
+                        <br>&emsp;&emsp;&emsp;Having attempted to write a file parser for 3D object files I elected to make
                                         use of a couple common libraries for this application, utilizing <a href="https://github.com/tinyobjloader/tinyobjloader.git">tinyobjloader</a> for parsing .obj and .mtl files and
                         <a href="https://github.com/nothings/stb/blob/af1a5bc352164740c1cc1354942b1c6b72eacb8a/stb_image.h">stb_image</a> for texture parsing. Although these have made focusing on the actual graphics engineering side significantly easier I would like to revisit this at a later date and build custom parsers for the renderer.
                         Once I figured out how to properly interact with the Vulkan data structures, getting the information from the libraries into the format Vulkan wanted ended up being surprisingly easy.
-                        <br> The task which I spent most of the development time on so far was getting the depth buffer functioning, the path to which taught me a great deal about developing with Vulkan. When you hear developers talk about Vulkan and say that you can configure every last
-                                        parameter exactly how you want it, you think ok it's configurable. But no; you really can configure every last single parameter and function that you can imagine, and even most of the ones you can't. Whenever I ran into issues developing the depth buffer,
-                                        the solution usually ended up being configuring an aspect of a struct that I forgot about, or switching the bitmask's configuration slightly as I had fat-fingered a macro. Very few things have forced upon me the appreciation for every last detail that working in Vulkan has.
-                                        After a couple hours of dealing with the issues caused by this though I started to get used to it, and rapidly began to make fewer mistakes and be more accurate and deliberate with my architecture choices.
+                    </p>
+                    <p class="lead mt-4"><strong>General Program Architecture</strong>
+                        <br>&emsp;&emsp;&emsp;A large goal moving out of our first pass with this renderer was to fully restructure the architecture of the project. Initially as an aspect of both our laziness and the sources which we were referencing this
+                                            renderer started out as a single file program. This is to put it mildly unsustainable for a large, complex project. However, designing the architecture for this project was no small undertaking. The biggest concern was encapsulation,
+                                            making sure that each seperate part of the program only had access to the data and libraries that it needed. The issue with this is that due to our initial design a great deal of our work was associated with other parts, requiring major
+                                            restructuring in order to improve scaleability. It was an issue that needed to be tackled though, and the only way to deal with it was to sit down and puzzle out what needed what access. The end result is not exactly the gleaming paragon
+                                            of good software design that we hoped for, but this is something that we can now continue to improve upon.
+                    </p>
+                    <p class="lead mt-4"><strong>Basic Lighting</strong>
+                        <br> &emsp;&emsp;&emsp;Saying that getting basic lighting working was an adventure would be putting it mildly. Doing this work has really been eye opening, having worked primarily in other people's frameworks up until this point,
+                                            as I have gained a distinct appreciation for the work that goes into figuring out how to get what data where. Viewing the set up of basic lighting through this lense has forced a greater understanding both of the fundamentals of how
+                                            these algorithms work as well as how the renderer deals with it on the back end. Right now, we have a hard-coded light in the vertex shader, with lighting calculations being split between the vertex and fragment shaders and varyings
+                                            passing data between them.
+                        <br> &emsp;&emsp;&emsp;My current task is breaking this out from a hard-coded light into a light defined in the renderer and passed into the shaders via a vertex buffer as this is both a stepping stone on the way to many different Lighting
+                                            operations and I believe it will resolve the small issue that we have where the light's coordinates are in camera space. I am currently running into roadblocks with how to package the vertex buffer for the light data in such a way that
+                                            it does not interfere with the actually vertex data which is currently in a seperate vertex input buffer. So far I have been doing a mix of referencing other's work on the subject and reading through the specification to find a solution to
+                                            this problem, and as a result have doubts as to whether I am going about this process in the right way. Many others working on similar projects seem to prefer using only a single vertex input buffer rather than passing multiple, packaging
+                                            all data that the vertex shader needs together. This approach seems to favor efficiency, but in my opinion is less understandable than having separate input buffers for different aspects, as well as being a possible issue if you need
+                                            different aspects to update at different rates or in different ways. As such I need to do more research and testing to figure out what the best approach for my use case is.
                     </p>
                     <p class="lead mt-4"><strong>Future Plans</strong>
-                        <br> There are definitely several things that I would like to change about the current implementation. For one, the architecture mostly consists of a single large Application class that contains the overwhelming majority of the renderer's functionality,
-                                            with some Vulkan data types broken out and encapsulated in smaller classes. This is frankly unweildy and uncomfortable to work with; a 1,400 line long file is never ideal. Moving forward I would like to sit down and reassess the architecture, stepping back
-                                            and using UML diagrams or a similar tool to architect out a sensical organization for the renderer that also maintains the decoupling of data. Besides this massive architectural hurdle before moving on to exploring other graphics techniques I would also like to
-                                            resolve issues with my implementation of the stencil stored with the depth buffer, as it is currently non-functional. Once these issues are resolved I would like to tackle lighting next, with the eventual goal of implementing reasonably performant global illumination.
+                        <br> &emsp;&emsp;&emsp;If we are being honest we would like to explore every corner of graphics programming with this renderer, but we are only human so we will have to settle for less. For now, other than lighting work which is talked about
+                                            in context above, we have a couple goals. First things first we would like to increase the interactivity of the renderer, adding controls for different aspects, maybe uniforms for the shaders. An eventual goal of this could be to have
+                                            an application similar to something like Shadertoy, where users are able to plug their shaders in and play around with settings, seeing the results rendered. This would be a good goal as it allows us a way to demonstrate our graphics
+                                            knowledge while providing a tool that may assist others in the profession.
                     </p>
                     <hr class="mt-5">
                     <div class="row mt-5">
