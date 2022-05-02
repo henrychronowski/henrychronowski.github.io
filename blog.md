@@ -32,6 +32,8 @@ permalink: /blog/
 
 This page is where my blog posts live. In the future they will be organized via tags.
 
+I am in the process of transitioning old blogs to the new format.
+
 <ul>
   {% assign posts = site.categories['blog'] %}
   {% for post in posts %}

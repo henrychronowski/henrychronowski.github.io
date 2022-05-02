@@ -1,6 +1,6 @@
 ---
-title: "Daniel S. Buckstein: Hello Jekyll"
-excerpt: "The first blog post: Dan is excited about this website."
+title: "Template Blog"
+excerpt: "This is what blog posts will look like"
 ---
 
 <!--
