@@ -1,0 +1,23 @@
+title: "Henry Chronowski"
+description: "gramphics"
+highlighter: rouge
+markdown: kramdown
+kramdown: 
+    math_engine: mathjax
+    parse_block_html: true
+    syntax_highlighter: rouge
+    syntax_highlighter_opts:
+        default_lang: c
+        span:
+            line_numbers: false
+        block:
+            line_numbers: true
+            start_line: 1
+exclude: 
+    - node_modules
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+    - LICENSE
+    - README.md
