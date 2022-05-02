@@ -30,7 +30,7 @@ permalink: /blog/
 
 # Blog
 
-This page is where the blog posts live.
+This page is where my blog posts live. In the future they will be organized via tags.
 
 <ul>
   {% assign posts = site.categories['blog'] %}
