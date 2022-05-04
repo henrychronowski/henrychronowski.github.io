@@ -2,6 +2,7 @@ title: "Henry Chronowski"
 description: "gramphics"
 highlighter: rouge
 markdown: kramdown
+remote_theme: pages-themes/midnight@v0.2.0
 kramdown: 
     math_engine: mathjax
     parse_block_html: true
