@@ -22,7 +22,7 @@ markdown: kramdown
 
 
 # Greetings
-Hello! Welcome to my new, WIP portfolio website. Here you'll find explorations of graphics, animation, math, music, and art in the context of game development, as well as anything else that I find interesting. I unfortunately am a graphics programmer and not a web developer though, so please bear with the lack of visual interest and stark bright backgrounds of this website as I become acquanted with this new system. 
+Hello! Welcome to my new, WIP portfolio website. Here you'll find explorations of graphics, animation, math, music, and art in the context of game development, as well as anything else that I find interesting. I unfortunately am a graphics programmer and not a web developer though, so please bear with the default visuals and lack of content as I explore this new system and transition my blog posts from my old website over.
 
 ## Links
 
