@@ -1,6 +1,6 @@
 ---
 title: "Planetary Planter"
-excerpt: "An open-world farming game where, instead of farming plants, you farm planets"
+excerpt: "An open-world planet farming game where"
 ---
 
 <!--
