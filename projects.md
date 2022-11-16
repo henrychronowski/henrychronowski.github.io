@@ -30,7 +30,7 @@ permalink: /projects/
 
 # Projects
 
-This is a catalogue of my projects, explorations, and what I learned from them.
+This is a catalogue of my projects and explorations in mostly chronological order. If you have any questions about a project feel free to reach out.
 
 <ul>
   {% assign posts = site.categories['projects'] %}
