@@ -37,6 +37,10 @@ excerpt: "A free flowing 3D brawler built in Unreal Engine 4"
 
 # Unga Bunga
 
+- Team of 8
+- August-December 2021
+- Role: Lead Programmer
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fMWHMkPOzug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     Deep in an underground lab in a classified location, an ancient human unfreezes. He's confused and angry at first, but he pauses at the sounds of his ancestral gods calling out to him; Demanding he finish the job he couldn't millennia ago, leading him on a quest for vengeance.
