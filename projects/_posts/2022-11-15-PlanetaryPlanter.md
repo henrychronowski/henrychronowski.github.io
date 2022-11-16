@@ -1,6 +1,6 @@
 ---
 title: "Planetary Planter"
-excerpt: "An open-world planet farming game where"
+excerpt: "An open-world planet farming game"
 ---
 
 <!--
