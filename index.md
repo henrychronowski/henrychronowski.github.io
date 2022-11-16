@@ -35,4 +35,4 @@ Hello and welcome to my portfolio website! Here you'll find explorations of grap
 
 ### Social Media
 
-Find me on [GitHub](https://github.com/henrychronowski), [LinkedIn](https://www.linkedin.com/in/henry-chronowski/) and [ArtStation](https://www.artstation.com/henrychronowski5/profile).
+Find me on [GitHub](https://github.com/henrychronowski) and [LinkedIn](https://www.linkedin.com/in/henry-chronowski/) <!--and [ArtStation](https://www.artstation.com/henrychronowski5/profile).-->
