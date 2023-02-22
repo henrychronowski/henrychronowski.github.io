@@ -1,6 +1,6 @@
 ---
 title: "Unga Bunga"
-excerpt: "A free flowing 3D brawler built in Unreal Engine 4"
+excerpt: "A free flowing 3D brawler built in UE4"
 ---
 
 <!--

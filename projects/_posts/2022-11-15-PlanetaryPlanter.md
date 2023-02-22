@@ -27,9 +27,11 @@ excerpt: "An open-world planet farming game"
 
 
 [Home](/projects/../)
+
 <!--
 [Blog](/blog/)
 -->
+
 [Projects](/projects/)
 
 [About](/about/)
@@ -42,7 +44,7 @@ excerpt: "An open-world planet farming game"
 - Role: Graphics and Animation Programmer
 - [Steam Release](https://store.steampowered.com/app/1974080/Planetary_Planter/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FNFdp2oSUSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/FNFdp2oSUSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview
 
@@ -57,7 +59,7 @@ excerpt: "An open-world planet farming game"
 
    I worked as the graphics and animation programmer on this project, helping to architect a unique scriptable rendering pipeline built off of the HDRP for Unity in order to help realize the comfortable and interesting environment needed for Planetary Planter. In addition to my pipeline work, I also built multiple parts of the environment ranging from the customizable and procedural skybox to 2D asset creation for objects and VFX including the grass to help take the load off of environment artists. By far my favorite task on the project was developing an efficient way to use vertex displacement in this customized pipeline to emulate a spherical world to replace the fully modelled round world with custom physics that existed when I joined the team.
 
-![DesertScreenshot1](/assets/img/projects/PlanetaryPlanter/DesertScreenshot.jpg){:style="display:block; margin-left:auto; margin-right:auto; width:560px"}
+![DesertScreenshot1](/assets/img/projects/PlanetaryPlanter/DesertScreenshot.jpg){:style="display:block; margin-left:auto; margin-right:auto; width:688px"}
 
 
 <!--
