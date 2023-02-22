@@ -27,9 +27,9 @@ excerpt: "An open-world planet farming game"
 
 
 [Home](/projects/../)
-
+<!--
 [Blog](/blog/)
-
+-->
 [Projects](/projects/)
 
 [About](/about/)
@@ -42,6 +42,8 @@ excerpt: "An open-world planet farming game"
 - Role: Graphics and Animation Programmer
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FNFdp2oSUSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Overview
 
     Planetary Planter is a single-player, open-world, third-person farming game where, instead of farming normal vegetables, you grow celestial bodies while exploring an alien world. You explore the alien world using exploration tools to find seeds and modifiers scattered throughout the environments. After planting and growing planets and stars you can harvest them. Once the planets and stars are harvested, the player can arrange them into solar systems, and arrange those solar systems into constellations. Players completing these constellations results in them receiving new exploration tools to help them explore as well as getting more of the story unlocked to read.
 
@@ -58,6 +60,7 @@ excerpt: "An open-world planet farming game"
 
 - procedural sky
 - rendering engine choice
--->
+
 
 ***Henry Chronowski***
+-->
