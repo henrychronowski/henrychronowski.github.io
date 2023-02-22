@@ -25,9 +25,11 @@ excerpt: "SHORT DESCRIPTION DISPLAYED IN THE LIST"
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 [Home](/projects/../)
+
 <!--
 [Blog](/blog/)
 -->
+
 [Projects](/projects/)
 
 [About](/about/)
@@ -42,7 +44,7 @@ excerpt: "SHORT DESCRIPTION DISPLAYED IN THE LIST"
 <!--
 Trailer/Screenshot 1
 -->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FNFdp2oSUSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/FNFdp2oSUSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview
 

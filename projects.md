@@ -23,7 +23,9 @@ permalink: /projects/
 
 [Home](../)
 
+<!--
 [Blog](/blog/)
+-->
 
 [About](/about/)
 
