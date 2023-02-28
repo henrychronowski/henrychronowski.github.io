@@ -49,7 +49,7 @@ excerpt: "A free flowing 3D brawler built in UE4"
 
     Unga Bunga is a free-flowing 3D brawler focused on having the players use what they can find around them to enact revenge and settle a 25,000 year conflict. This vertical slice was my team's entry to our college capstone greenlight process, the culmination of a semester of work bringing it from one among several prototypes to a contender for moving forward with development. Unfortunately Unga Bunga was not selected to continue and remains a tech demo, but that doesn't mean that we didn't learn anything.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/okeuPHWAiZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/okeuPHWAiZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--
 ## Related Blog Posts
@@ -60,7 +60,7 @@ excerpt: "A free flowing 3D brawler built in UE4"
 
    Unga Bunga was built in UE4 utilizing Git for version control. My primary duties on the project including building and maintaining both technical and interpersonal pipelines, taking the lead on gameplay development, implementing custom rendering and camera features, and instructing the other members of the team on Unreal development. Some of my favorite parts of the project were the 3rd-person camera controller I built to give an orthographic feel while avoiding difficulties associated with fully orthographic rendering, and the basic combo system I prototyped for our combat, although I probably enjoyed creating the main menu the most.
 
-<iframe width="560" height="315" src="https://youtu.be/5dmeaDYMFdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://youtu.be/5dmeaDYMFdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
