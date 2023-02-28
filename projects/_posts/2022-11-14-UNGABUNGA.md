@@ -60,7 +60,7 @@ excerpt: "A free flowing 3D brawler built in UE4"
 
    Unga Bunga was built in UE4 utilizing Git for version control. My primary duties on the project including building and maintaining both technical and interpersonal pipelines, taking the lead on gameplay development, implementing custom rendering and camera features, and instructing the other members of the team on Unreal development. Some of my favorite parts of the project were the 3rd-person camera controller I built to give an orthographic feel while avoiding difficulties associated with fully orthographic rendering, and the basic combo system I prototyped for our combat, although I probably enjoyed creating the main menu the most.
 
-<iframe width="688" height="387" src="https://youtu.be/5dmeaDYMFdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/5dmeaDYMFdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 

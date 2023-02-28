@@ -38,13 +38,13 @@ excerpt: "A 3rd-person puzzle game built in UE4"
 # Solarsnap
 
 - Team of 7
-- 3 months
+- Feb-May 2021
 - Role: Integration and Graphics programmer
 
 <!--
 Trailer/Screenshot 1
 -->
-<iframe width="688" height="387" src="https://youtu.be/qeIOpp2Q0x4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="387" src="https://www.youtube.com/embed/qeIOpp2Q0x4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview
 
