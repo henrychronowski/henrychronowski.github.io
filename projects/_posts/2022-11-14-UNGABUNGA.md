@@ -70,4 +70,6 @@ excerpt: "A free flowing 3D brawler built in UE4"
 
    All of these negatives being stated I think there is something that we nailed on this project: the atmosphere. Although our gameplay wasn't quite up to par due to the above, we were able to take our ideas and craft a feeling around them, translating that feeling into audio and graphics and refining them through QA testing to elicit the exact response we wanted in our players. Additionally through our creation of solid pipelines up front, we were able to streamline the process of getting help when any team member ran into issues, with a clear understanding of who owned what features and knowledge and how they could help. This application of knowledge and experiences gained in previous projects was frankly refreshing, and reinforced in my mind how important the prep work for teamwork is.
 
+<!--
 ***Henry Chronowski***
+-->
