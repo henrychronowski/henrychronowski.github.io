@@ -26,7 +26,9 @@ Hello and welcome to my portfolio website! Here you'll find explorations of grap
 
 ## Links
 
+<!--
 [Blog](/blog/) - Focused discussion on discrete topics mixed with semi-coherent ramblings
+-->
 
 [Projects](/projects/) - A list of my endeavors with discussions and post-mortems
 
