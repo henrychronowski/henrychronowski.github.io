@@ -62,12 +62,12 @@ excerpt: "An open-world planet farming game"
 ![DesertScreenshot1](/assets/img/projects/PlanetaryPlanter/DesertScreenshot.jpg){:style="display:block; margin-left:auto; margin-right:auto; width:688px"}
 
 
-<!--
 
 ## Related Blog Posts
 
-- Procedural Sky
+- [Procedural Sky](/blog/2023/10/19/PP-Sky.html)
 
+<!--
 - procedural sky
 - rendering engine choice
 
